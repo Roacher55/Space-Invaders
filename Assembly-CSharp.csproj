@@ -53,7 +53,9 @@
     <UnityVersion>2020.3.22f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\TextScoreController.cs" />
     <Compile Include="Assets\Scripts\PlayerShoot.cs" />
+    <Compile Include="Assets\Scripts\GridMenu.cs" />
     <Compile Include="Assets\Scripts\ButtonController.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
@@ -61,10 +63,9 @@
     <Compile Include="Assets\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\EnemyWhoShoot.cs" />
-    <Compile Include="Assets\Scripts\TextPoints.cs" />
     <Compile Include="Assets\Scripts\StatisticData.cs" />
-    <Compile Include="Assets\Scripts\TextScoreController.cs" />
-    <Compile Include="Assets\Scripts\GridMenu.cs" />
+    <Compile Include="Assets\Scripts\TextPoints.cs" />
+    <Compile Include="Assets\Scripts\Boost.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

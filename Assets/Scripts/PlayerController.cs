@@ -8,15 +8,30 @@ using UnityEngine.EventSystems;
 public class PlayerController : MonoBehaviour
 {
     float timerShoot =2f;
+    float timerShootNitro;
     [SerializeField] GameObject shoot;
     [SerializeField] float speed = 0.1f;
     bool right = false;
     bool left = false;
+    public float timerForNitro = 0f;
+
+    private void Start()
+    {
+        timerShootNitro = timerShoot / 2f;
+    }
 
     private void Update()
     {
         Move();
-        Shoot();
+        if(timerForNitro<=0)
+        {
+             Shoot();
+        }
+        else
+        {
+            ShootNitro();
+        }
+        
     }
 
 
@@ -70,4 +85,15 @@ public class PlayerController : MonoBehaviour
             timerShoot = 2f;
         }
      }
+
+    void ShootNitro()
+    {
+        timerShootNitro -= Time.deltaTime;
+        timerForNitro -= Time.deltaTime;
+        if (timerShootNitro <= 0)
+        {
+            Instantiate(shoot, transform.position, Quaternion.identity);
+            timerShootNitro = timerShoot / 2f;
+        }
+    }
 }
