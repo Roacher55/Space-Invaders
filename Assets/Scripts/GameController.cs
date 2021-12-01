@@ -73,9 +73,9 @@ public class GameController : MonoBehaviour
         var tempScore = points;
         for (int i = 0; i < statisticData.scores.Count; i++)
         {
-            if(points> statisticData.scores[i])
+            if(tempScore> statisticData.scores[i])
             { 
-                var temp = statisticData.scores[i];
+                int temp = statisticData.scores[i];
                 statisticData.scores[i] = tempScore;
                 tempScore = temp;
             }
@@ -89,11 +89,12 @@ public class GameController : MonoBehaviour
         {
             if (points == statisticData.scores[i])
             {
-                yourPlace.GetComponent<Text>().text = "Twoje miejsce : " + i;
+                yourPlace.GetComponent<Text>().text = "Twoje miejsce : " + i+1;
                 return;
             }
-            yourPlace.GetComponent<Text>().text = "Poza top 10";
+            
         }
+        yourPlace.GetComponent<Text>().text = "Poza top 10";
     }
 
    public void ClickMenu()
