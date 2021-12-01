@@ -12,7 +12,7 @@ public class TextScoreController : MonoBehaviour
 
     public void UpdateList()
     {
-        for (int i = 0; i < statisticData.scores.Count; i++)
+        for (int i = 0; i < 10; i++)
         {
             textScores[i].text = i + 1 + ". Wynik - " + statisticData.scores[i] + " !";
         }

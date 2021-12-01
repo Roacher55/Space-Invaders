@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "StatisticData")]
 public class StatisticData : ScriptableObject
 {
-    public List<int> scores;
+    public int[] scores;
 }

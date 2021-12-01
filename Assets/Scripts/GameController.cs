@@ -18,6 +18,9 @@ public class GameController : MonoBehaviour
     [SerializeField] GameObject activeGrid;
     [SerializeField] GameObject yourScore;
     [SerializeField] GameObject yourPlace;
+    bool onlyOnce = true;
+    int tempPoints;
+    int temp;
     void Start()
     {
         points = 0;
@@ -58,26 +61,33 @@ public class GameController : MonoBehaviour
 
     void EndGame()
     {
-        if (enemies.Count == 0)
+        if (enemies.Count == 0 && onlyOnce)
         { 
+           
             UpdateScore();
             EndGameText();
             disableGrid.SetActive(false);
             activeGrid.SetActive(true);
+            onlyOnce = false;
         }
         
     }
 
     void UpdateScore()
     {
-        var tempScore = points;
-        for (int i = 0; i < statisticData.scores.Count; i++)
+        tempPoints = points;
+        foreach(var x in statisticData.scores)
         {
-            if(tempScore> statisticData.scores[i])
-            { 
-                int temp = statisticData.scores[i];
-                statisticData.scores[i] = tempScore;
-                tempScore = temp;
+            for (int i = 0; i < 10; i++)
+            {
+                if (tempPoints > statisticData.scores[i])
+                {
+                    temp = statisticData.scores[i];
+                    statisticData.scores[i] = tempPoints;
+                    tempPoints = temp;
+                    Debug.Log(i + " indeks i wynik " + statisticData.scores[i]);
+                }
+
             }
         }
     }
@@ -85,11 +95,11 @@ public class GameController : MonoBehaviour
     void EndGameText()
     {
         yourScore.GetComponent<Text>().text = "Twój wynik: " + points;
-        for (int i = 0; i < statisticData.scores.Count; i++)
+        for (int i = 0; i < 10; i++)
         {
             if (points == statisticData.scores[i])
             {
-                yourPlace.GetComponent<Text>().text = "Twoje miejsce : " + i+1;
+                yourPlace.GetComponent<Text>().text = "Twoje miejsce : " + (i+1);
                 return;
             }
             

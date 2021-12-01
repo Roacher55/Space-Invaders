@@ -58,6 +58,7 @@
     <Compile Include="Assets\Scripts\GridMenu.cs" />
     <Compile Include="Assets\Scripts\ButtonController.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Boost.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\EnemyShoot.cs" />
     <Compile Include="Assets\Scripts\CameraScript.cs" />
@@ -65,7 +66,6 @@
     <Compile Include="Assets\Scripts\EnemyWhoShoot.cs" />
     <Compile Include="Assets\Scripts\StatisticData.cs" />
     <Compile Include="Assets\Scripts\TextPoints.cs" />
-    <Compile Include="Assets\Scripts\Boost.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
