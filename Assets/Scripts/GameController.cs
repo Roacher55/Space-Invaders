@@ -61,8 +61,8 @@ public class GameController : MonoBehaviour
     void EndGame()
     {
         if (enemies.Count == 0 && onlyOnce)
-        { 
-           
+        {
+            statisticData.howManyTimesplay++;
             UpdateScore();
             EndGameText();
             disableGrid.SetActive(false);

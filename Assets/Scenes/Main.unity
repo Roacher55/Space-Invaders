@@ -760,7 +760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 296814923507289292, guid: 1e1b119a3fb198641a6230344c411c50, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 296814923507289292, guid: 1e1b119a3fb198641a6230344c411c50, type: 3}
       propertyPath: m_AnchorMax.x
@@ -820,7 +820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 296814923507289292, guid: 1e1b119a3fb198641a6230344c411c50, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1112.8469
+      value: -1187.8469
       objectReference: {fileID: 0}
     - target: {fileID: 296814923507289292, guid: 1e1b119a3fb198641a6230344c411c50, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1041,6 +1041,7 @@ MonoBehaviour:
   activeGrid: {fileID: 1688327361}
   yourScore: {fileID: 1807772833}
   yourPlace: {fileID: 2124260131}
+  howManyTimesPlay: {fileID: 0}
 --- !u!4 &994424154
 Transform:
   m_ObjectHideFlags: 0
@@ -1821,7 +1822,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2753489565753319996, guid: bf092f5a9a94c2d4682818a9772082c9, type: 3}
       propertyPath: m_Name
-      value: ScoreText
+      value: UourScore
       objectReference: {fileID: 0}
     - target: {fileID: 3942296806701822356, guid: bf092f5a9a94c2d4682818a9772082c9, type: 3}
       propertyPath: m_Pivot.x
@@ -1893,7 +1894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3942296806701822356, guid: bf092f5a9a94c2d4682818a9772082c9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -812.84686
+      value: -737.84686
       objectReference: {fileID: 0}
     - target: {fileID: 3942296806701822356, guid: bf092f5a9a94c2d4682818a9772082c9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2057,7 +2058,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2753489565753319996, guid: bf092f5a9a94c2d4682818a9772082c9, type: 3}
       propertyPath: m_Name
-      value: ScoreText2
+      value: YourPlace
       objectReference: {fileID: 0}
     - target: {fileID: 3942296806701822356, guid: bf092f5a9a94c2d4682818a9772082c9, type: 3}
       propertyPath: m_Pivot.x
@@ -2129,7 +2130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3942296806701822356, guid: bf092f5a9a94c2d4682818a9772082c9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -962.84686
+      value: -887.84686
       objectReference: {fileID: 0}
     - target: {fileID: 3942296806701822356, guid: bf092f5a9a94c2d4682818a9772082c9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

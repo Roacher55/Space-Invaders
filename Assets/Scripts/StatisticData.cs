@@ -6,4 +6,5 @@ using UnityEngine;
 public class StatisticData : ScriptableObject
 {
     public int[] scores;
+    public int howManyTimesplay;
 }

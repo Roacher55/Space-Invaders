@@ -9,6 +9,7 @@ public class TextScoreController : MonoBehaviour
     [SerializeField] StatisticData statisticData;
     [SerializeField] GameObject disableGrid;
     [SerializeField] GameObject activeGrid;
+    [SerializeField] GameObject howManyTimesPlay;
 
     public void UpdateList()
     {
@@ -16,6 +17,7 @@ public class TextScoreController : MonoBehaviour
         {
             textScores[i].text = i + 1 + ". Wynik - " + statisticData.scores[i] + " !";
         }
+        howManyTimesPlay.GetComponent<Text>().text = "Liczba gier: " + statisticData.howManyTimesplay;
         disableGrid.SetActive(false);
         activeGrid.SetActive(true);
     }
