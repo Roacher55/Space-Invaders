@@ -19,8 +19,7 @@ public class GameController : MonoBehaviour
     [SerializeField] GameObject yourScore;
     [SerializeField] GameObject yourPlace;
     bool onlyOnce = true;
-    int tempPoints;
-    int temp;
+    
     void Start()
     {
         points = 0;
@@ -75,10 +74,11 @@ public class GameController : MonoBehaviour
 
     void UpdateScore()
     {
-        tempPoints = points;
+        var tempPoints = points;
+        int temp;
         foreach(var x in statisticData.scores)
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < statisticData.scores.Length; i++)
             {
                 if (tempPoints > statisticData.scores[i])
                 {
@@ -95,7 +95,7 @@ public class GameController : MonoBehaviour
     void EndGameText()
     {
         yourScore.GetComponent<Text>().text = "Twój wynik: " + points;
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < statisticData.scores.Length; i++)
         {
             if (points == statisticData.scores[i])
             {

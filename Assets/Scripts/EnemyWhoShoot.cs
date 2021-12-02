@@ -8,6 +8,7 @@ public class EnemyWhoShoot : Enemy
     float timerShoot;
     [SerializeField] GameObject shoot;
     // Start is called before the first frame update
+    float errorMargin = 0.3f;
     void Start()
     {
         gameController = FindObjectOfType<GameController>();
@@ -38,7 +39,7 @@ public class EnemyWhoShoot : Enemy
         int lostPoints = 0;
         foreach (GameObject e in gameController.enemies)
         {
-            if (e.transform.position.x - 0.1f < transform.position.x && e.transform.position.x + 0.1f > transform.position.x)
+            if (e.transform.position.x - errorMargin < transform.position.x && e.transform.position.x + errorMargin > transform.position.x)
             {
                 lostPoints++;
             }        

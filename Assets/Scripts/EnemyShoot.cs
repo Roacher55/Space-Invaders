@@ -30,6 +30,7 @@ public class EnemyShoot : MonoBehaviour
                 GameController.points = 0;
             }
             Destroy(gameObject);
+            
         }
     }
 }

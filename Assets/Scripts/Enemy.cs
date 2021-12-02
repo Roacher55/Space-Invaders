@@ -12,10 +12,12 @@ public class Enemy : MonoBehaviour
     float timer = 5f;
     static float timerMinus =5f;
     protected GameController gameController;
+    float errorMargin = 0.3f;
 
     void Start()
     {
         gameController = FindObjectOfType<GameController>();
+        speed = 1f;
     }
 
     // Update is called once per frame
@@ -23,6 +25,7 @@ public class Enemy : MonoBehaviour
     {
         Move();
         DestroyOutside();
+        // Debug.Log(speed);
     }
 
     protected void Move()
@@ -47,6 +50,7 @@ public class Enemy : MonoBehaviour
         if (transform.position.x == xRight)
         {
             direction = false;
+            
         }
         else if (transform.position.x == xLeft)
         {
@@ -63,7 +67,10 @@ public class Enemy : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y - 1f, transform.position.z);
             timer = timerMinus;
+            InSameLine();
         }
+
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -94,16 +101,17 @@ public class Enemy : MonoBehaviour
         int lostPoints = 0;
         foreach (GameObject e in gameController.enemies)
         {
-            if (e.transform.position.x -0.1f < transform.position.x && e.transform.position.x + 0.1f > transform.position.x)
+            if (e.transform.position.x - errorMargin < transform.position.x && e.transform.position.x + errorMargin > transform.position.x)
             {
                 lostPoints++;
             }
-            lostPoints = lostPoints * 2;
-            GameController.points = GameController.points - lostPoints;
-            if (GameController.points < 0)
-            {
-                GameController.points = 0;
-            }
+
+        }
+        lostPoints = lostPoints * 2;
+        GameController.points = GameController.points - lostPoints;
+        if (GameController.points < 0)
+        {
+            GameController.points = 0;
         }
     }
 
@@ -114,6 +122,17 @@ public class Enemy : MonoBehaviour
             gameController.enemies.Remove(gameObject);
             Destroy(gameObject);
 
+        }
+    }
+
+    void InSameLine()
+    {
+        foreach (var x in gameController.enemies)
+        {
+            if (x.transform.position.x + errorMargin > transform.position.x && x.transform.position.x - errorMargin < transform.position.x)
+            {
+                transform.position = new Vector3(x.transform.position.x, transform.position.y, transform.position.z);
+            }
         }
     }
 

@@ -14,10 +14,12 @@ public class PlayerController : MonoBehaviour
     bool right = false;
     bool left = false;
     public float timerForNitro = 0f;
+    private float timerforNitroPernament;
 
     private void Start()
     {
-        timerShootNitro = timerShoot / 2f;
+        timerforNitroPernament = timerShoot / 2f;
+        timerForNitro = timerforNitroPernament;
     }
 
     private void Update()
@@ -93,7 +95,7 @@ public class PlayerController : MonoBehaviour
         if (timerShootNitro <= 0)
         {
             Instantiate(shoot, transform.position, Quaternion.identity);
-            timerShootNitro = timerShoot / 2f;
+            timerShootNitro = timerforNitroPernament;
         }
     }
 }
