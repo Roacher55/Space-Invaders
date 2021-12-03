@@ -76,8 +76,7 @@ public class GameController : MonoBehaviour
     {
         var tempPoints = points;
         int temp;
-        foreach(var x in statisticData.scores)
-        {
+        
             for (int i = 0; i < statisticData.scores.Length; i++)
             {
                 if (tempPoints > statisticData.scores[i])
@@ -88,7 +87,6 @@ public class GameController : MonoBehaviour
                     Debug.Log(i + " indeks i wynik " + statisticData.scores[i]);
                 }
 
-            }
         }
     }
 
