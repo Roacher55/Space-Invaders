@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -86,8 +87,8 @@ public class GameController : MonoBehaviour
                     tempPoints = temp;
                     Debug.Log(i + " indeks i wynik " + statisticData.scores[i]);
                 }
-
         }
+        EditorUtility.SetDirty(statisticData);
     }
 
     void EndGameText()
